@@ -71,7 +71,7 @@ stock StringMap LinuxParseMapsFile(bool bRefresh = false, bool bAddressAsKey = f
         TrimString(sBuffer);
         iLength = strlen(sBuffer);
 
-        if(strcmp(sBuffer[iLength - 3], ".so") != 0)
+        if((strcmp(sBuffer[iLength - 3], ".so") != 0) && (strncmp(sBuffer[iLength - 5], ".so", 3) != 0))
         {
             continue;
         }
